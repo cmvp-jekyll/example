@@ -1,5 +1,5 @@
 url: https://example.com/
-baseurl: ""
+baseurl: "example"
 
 title: Mi nuevo blog
 author: David Charte
