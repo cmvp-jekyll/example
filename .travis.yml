@@ -5,10 +5,10 @@ rvm:
 
 before_install: |
     gem install bundler
-    git config --global user.email "fdavidcl@protonmail.com"
+    git config --global user.email "fdavidcl@example.org"
     git config --global user.name "David (Bot)"
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
-    git clone -b master https://${MY_TOKEN}@github.com/cmvp-jekyll/example.git .site
+    git clone -b gh-pages https://${MY_TOKEN}@github.com/cmvp-jekyll/example.git .site
 
 script: |
     bundle exec jekyll build -d .site
@@ -20,4 +20,4 @@ after_success: |
     git add * && \
     git add . --all && \
     git commit -m "Actualización: `date`" && \
-    git push origin master --quiet
+    git push origin gh-pages --quiet
